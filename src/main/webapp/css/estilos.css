@@ -1,57 +1,671 @@
 /* Estilos de la aplicación. Esta página YA está hecha: no es necesario modificarla. */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+
 :root {
-    --azul: #1f3a5f; --acento: #c8741a; --verde: #2f8a4a; --rojo: #b3261e;
-    --fondo: #f4f6f9; --borde: #d5dbe3; --texto: #1c2733; --gris: #5f6b7a;
+    /* Colors — Ferrari Official Tokens */
+    --color-rosso-corsa: #da291c;
+    --color-rosso-scuro: #9d2211;
+    --color-bianco-ferrari: #ffffff;
+    --color-carbone-nero: #000000;
+    --color-notte-profonda: #181818;
+    --color-grafite: #303030;
+    --color-fumo: #8f8f8f;
+    --color-piombo: #666666;
+    --color-argento-chiaro: #d2d2d2;
+    --color-velo-di-luce: #f7f7f7;
+    --color-cemento: #ebebeb;
+
+    /* Typography — Font Families */
+    --font-body-font: 'Body-Font', 'Inter', 'Helvetica Neue', 'Arial Narrow', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    --font-ferrarisans: 'FerrariSans', 'Inter', 'Helvetica Neue', 'Arial Narrow', ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+    /* Typography — Scale & Inverted Tracking */
+    --text-micro: 9px;
+    --tracking-micro: 0.091em;
+
+    --text-caption: 11px;
+    --leading-caption: 1.78;
+    --tracking-caption: 0.091em;
+
+    --text-body-sm: 12px;
+    --leading-body-sm: 1.78;
+    --tracking-body-sm: 0.083em;
+
+    --text-body: 13px;
+    --leading-body: 1.78;
+    --tracking-body: 0.015em;
+
+    --text-display: 16px;
+    --leading-display: 1.5;
+    --tracking-display: 0.005em;
+
+    /* Typography — Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+
+    /* Spacing Scale */
+    --spacing-4: 4px;
+    --spacing-5: 5px;
+    --spacing-6: 6px;
+    --spacing-10: 10px;
+    --spacing-15: 15px;
+    --spacing-16: 16px;
+    --spacing-20: 20px;
+    --spacing-24: 24px;
+    --spacing-25: 25px;
+    --spacing-30: 30px;
+    --spacing-32: 32px;
+    --spacing-44: 44px;
+    --spacing-50: 50px;
+    --spacing-54: 54px;
+    --spacing-60: 60px;
+    --spacing-123: 123px;
+
+    /* Layout */
+    --page-max-width: 1440px;
+    --section-gap: 64px;
+    --card-padding: 32px;
+    --element-gap: 16px;
+
+    /* Strict Geometry (0px everywhere except 9999px category pills) */
+    --radius-full: 9999px;
+    --radius-tags: 0px;
+    --radius-cards: 0px;
+    --radius-buttons: 0px;
+
+    /* Surfaces */
+    --surface-void-black: #000000;
+    --surface-night-surface: #181818;
+    --surface-graphite-edge: #303030;
+    --surface-canvas-white: #ffffff;
+    --surface-smoke-wash: #f7f7f7;
+    --surface-concrete: #ebebeb;
+
+    /* Mapeo de variables originales del proyecto */
+    --azul: var(--color-bianco-ferrari);
+    --acento: var(--color-rosso-corsa);
+    --verde: var(--color-bianco-ferrari);
+    --rojo: var(--color-rosso-corsa);
+    --fondo: var(--surface-void-black);
+    --borde: var(--surface-graphite-edge);
+    --texto: var(--color-bianco-ferrari);
+    --gris: var(--color-fumo);
 }
-* { box-sizing: border-box; }
-body { margin: 0; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--fondo); color: var(--texto); line-height: 1.5; }
-.menu { background: var(--azul); display: flex; gap: .25rem; padding: 0 1rem; align-items: center; flex-wrap: wrap; }
-.menu .marca { color: #fff; font-weight: 700; margin-right: 1.5rem; padding: .8rem 0; text-decoration: none; }
-.menu a.enlace { color: #dbe6f5; text-decoration: none; padding: .8rem .9rem; border-bottom: 3px solid transparent; }
-.menu a.enlace:hover { color: #fff; border-bottom-color: var(--acento); }
-.menu a.enlace.activo { color: #fff; border-bottom-color: var(--acento); }
-main { max-width: 1100px; margin: 1.5rem auto; padding: 0 1rem; }
-h1 { color: var(--azul); margin: 0 0 .25rem; }
-h2 { color: var(--azul); font-size: 1.15rem; margin: 0 0 .75rem; }
-.sub { color: var(--gris); margin: 0 0 1.25rem; }
-.tarjeta { background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: 1.1rem 1.25rem; margin-bottom: 1.25rem; }
-.mensaje { padding: .7rem 1rem; border-radius: 8px; margin: 0 0 1rem; border: 1px solid; }
-.mensaje.ok { background: #e6f4ea; border-color: #9fd3ac; color: #1e5b30; }
-.mensaje.error { background: #fdecea; border-color: #f0b3ae; color: var(--rojo); }
-label { display: block; font-weight: 600; margin: .75rem 0 .25rem; }
-input[type=text], input[type=number], textarea { width: 100%; padding: .55rem .7rem; border: 1px solid var(--borde); border-radius: 8px; font: inherit; background: #fff; }
-textarea { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: .95rem; min-height: 11rem; }
-.boton { display: inline-block; background: var(--azul); color: #fff; border: 0; border-radius: 8px; padding: .55rem 1rem; font: inherit; font-weight: 600; cursor: pointer; text-decoration: none; }
-.boton:hover { background: #152a46; }
-.boton.acento { background: var(--acento); }
-.boton.acento:hover { background: #a85f12; }
-.boton.peligro { background: var(--rojo); }
-.boton.suave { background: #e8edf3; color: var(--azul); }
-.boton.suave:hover { background: #d9e1ea; }
-.boton[disabled] { opacity: .45; cursor: not-allowed; }
-.fila { display: flex; gap: .75rem; flex-wrap: wrap; align-items: flex-end; }
-.fila > div { flex: 1 1 140px; }
-.acciones { margin-top: 1rem; display: flex; gap: .6rem; flex-wrap: wrap; }
-table { width: 100%; border-collapse: collapse; }
-th, td { text-align: left; padding: .55rem .6rem; border-bottom: 1px solid var(--borde); }
-th { color: var(--gris); font-size: .85rem; text-transform: uppercase; letter-spacing: .03em; }
-tr.fila-miembro { cursor: pointer; }
-tr.fila-miembro:hover { background: #f0f4f9; }
-tr.fila-miembro.seleccionada { background: #e3eefb; }
-code { background: #eef1f5; padding: .1rem .35rem; border-radius: 4px; }
-.ayuda { color: var(--gris); font-size: .92rem; }
-.lienzo { overflow: auto; background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: .5rem; text-align: center; }
-.lienzo canvas { display: inline-block; }
-.leyenda { display: flex; gap: 1.2rem; flex-wrap: wrap; font-size: .85rem; color: var(--gris); margin: .6rem 0 0; }
-.leyenda span::before { content: ""; display: inline-block; width: .8rem; height: .8rem; border-radius: 3px; margin-right: .35rem; vertical-align: -1px; border: 2px solid; }
-.leyenda .l-sujeto::before { background: #fff3d6; border-color: #c8741a; }
-.leyenda .l-asc::before { background: #e3eefb; border-color: #2f6db5; }
-.leyenda .l-desc::before { background: #e2f4e6; border-color: #2f8a4a; }
-.panel { display: grid; grid-template-columns: 1fr; gap: 1.25rem; }
-@media (min-width: 900px) { .panel { grid-template-columns: 1fr 1fr; } }
-.oculto { display: none !important; }
-.inicio { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1rem; }
-.inicio a.tarjeta { text-decoration: none; color: inherit; display: block; }
-.inicio a.tarjeta:hover { border-color: var(--acento); }
-.inicio h2 { margin-bottom: .35rem; }
-pre.ejemplo { background: #eef1f5; border-radius: 8px; padding: .7rem .9rem; overflow: auto; margin: .4rem 0; }
+
+@keyframes ferrariReveal {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-ferrarisans);
+    font-size: var(--text-body);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-body);
+    font-feature-settings: "ss01" on;
+    background: var(--surface-void-black);
+    color: var(--color-bianco-ferrari);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   Ghost Navigation Bar (.menu)
+   Flat bar over the dark void, uppercase 11-12px, 0.083-0.091em tracking
+   ========================================================================== */
+.menu {
+    background: var(--surface-void-black);
+    border-bottom: 1px solid var(--surface-graphite-edge);
+    display: flex;
+    gap: var(--spacing-32);
+    padding: var(--spacing-16) var(--spacing-32);
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.menu .marca {
+    color: var(--color-bianco-ferrari);
+    font-family: var(--font-ferrarisans);
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.083em;
+    margin-right: var(--spacing-32);
+    padding: var(--spacing-5) 0;
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+.menu .marca:hover {
+    color: var(--color-rosso-corsa);
+}
+
+.menu a.enlace {
+    color: var(--color-fumo);
+    font-family: var(--font-body-font);
+    font-size: var(--text-body-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-body-sm);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-body-sm);
+    text-decoration: none;
+    padding: var(--spacing-5) 0;
+    border-bottom: 1px solid transparent;
+    border-radius: 0px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.menu a.enlace:hover {
+    color: var(--color-rosso-corsa);
+    border-bottom-color: var(--color-rosso-corsa);
+}
+
+.menu a.enlace.activo {
+    color: var(--color-bianco-ferrari);
+    border-bottom-color: var(--color-rosso-corsa);
+}
+
+/* ==========================================================================
+   Main Container & Whisper Typography Hierarchy
+   ========================================================================== */
+main {
+    max-width: var(--page-max-width);
+    margin: var(--spacing-60) auto var(--section-gap);
+    padding: 0 var(--spacing-32);
+    animation: ferrariReveal 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+h1 {
+    font-family: var(--font-ferrarisans);
+    color: var(--color-bianco-ferrari);
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-display);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-display);
+    margin: 0 0 var(--spacing-10);
+}
+
+h2 {
+    font-family: var(--font-ferrarisans);
+    color: var(--color-bianco-ferrari);
+    font-size: var(--text-display);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--leading-display);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-display);
+    margin: 0 0 var(--spacing-20);
+}
+
+.sub {
+    font-family: var(--font-body-font);
+    color: var(--color-fumo);
+    font-size: var(--text-caption);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-caption);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caption);
+    margin: 0 0 var(--spacing-44);
+}
+
+/* ==========================================================================
+   Featured Content Cards (.tarjeta)
+   Flat rectangular block on #181818, 0px radius, zero shadow, hairline rules
+   ========================================================================== */
+.tarjeta {
+    background: var(--surface-night-surface);
+    border: 1px solid var(--surface-graphite-edge);
+    border-radius: var(--radius-cards);
+    padding: var(--card-padding);
+    margin-bottom: var(--spacing-30);
+    box-shadow: none;
+    transition: border-color 0.25s ease;
+}
+
+/* ==========================================================================
+   Editorial Alerts (.mensaje)
+   ========================================================================== */
+.mensaje {
+    padding: var(--spacing-15) var(--spacing-20);
+    border-radius: 0px;
+    margin: 0 0 var(--spacing-24);
+    border: 1px solid var(--surface-graphite-edge);
+    border-left: 2px solid var(--color-bianco-ferrari);
+    background: var(--surface-night-surface);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caption);
+}
+
+.mensaje.ok {
+    border-left-color: var(--color-bianco-ferrari);
+    color: var(--color-bianco-ferrari);
+}
+
+.mensaje.error {
+    border-color: var(--color-rosso-scuro);
+    border-left-color: var(--color-rosso-corsa);
+    color: var(--color-rosso-corsa);
+}
+
+/* ==========================================================================
+   Forms & Inputs
+   0px radius, #000000 surface, 1px #303030 border, #da291c focus state
+   ========================================================================== */
+label {
+    display: block;
+    font-family: var(--font-body-font);
+    font-size: var(--text-caption);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-caption);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caption);
+    color: var(--color-fumo);
+    margin: var(--spacing-20) 0 var(--spacing-6);
+}
+
+input[type=text],
+input[type=number],
+textarea {
+    width: 100%;
+    padding: var(--spacing-10) var(--spacing-15);
+    border: 1px solid var(--surface-graphite-edge);
+    border-radius: 0px;
+    font-family: var(--font-ferrarisans);
+    font-size: var(--text-body);
+    line-height: var(--leading-body);
+    letter-spacing: var(--tracking-body);
+    background: var(--surface-void-black);
+    color: var(--color-bianco-ferrari);
+    box-shadow: none;
+    transition: border-color 0.25s ease;
+}
+
+input[type=text]:hover,
+input[type=number]:hover,
+textarea:hover {
+    border-color: var(--color-piombo);
+}
+
+input[type=text]:focus,
+input[type=number]:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--color-rosso-corsa);
+}
+
+textarea {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: var(--text-body-sm);
+    line-height: var(--leading-body-sm);
+    letter-spacing: 0.028em;
+    min-height: 12rem;
+}
+
+/* ==========================================================================
+   Buttons (.boton) — Section Label & CTA Arrow Link Philosophy
+   0px radius, transparent fill, white uppercase text, #da291c on hover/active
+   ========================================================================== */
+.boton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-10);
+    background: transparent;
+    color: var(--color-bianco-ferrari);
+    border: 1px solid var(--color-bianco-ferrari);
+    border-radius: var(--radius-buttons);
+    padding: var(--spacing-10) var(--spacing-20);
+    font-family: var(--font-body-font);
+    font-size: var(--text-body-sm);
+    font-weight: var(--font-weight-regular);
+    line-height: 1.27;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-body-sm);
+    cursor: pointer;
+    text-decoration: none;
+    box-shadow: none;
+    transition: color 0.25s ease, border-color 0.25s ease;
+}
+
+.boton::after {
+    content: "→";
+    font-size: var(--text-body-sm);
+    line-height: 1;
+    transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.boton:hover,
+.boton:focus-visible,
+.boton:active {
+    color: var(--color-rosso-corsa);
+    border-color: var(--color-rosso-corsa);
+    background: transparent;
+    outline: none;
+}
+
+.boton:hover::after {
+    transform: translateX(4px);
+    color: var(--color-rosso-corsa);
+}
+
+.boton.acento {
+    background: transparent;
+    color: var(--color-bianco-ferrari);
+    border-color: var(--surface-graphite-edge);
+}
+
+.boton.acento:hover {
+    color: var(--color-rosso-corsa);
+    border-color: var(--color-rosso-corsa);
+    background: transparent;
+}
+
+.boton.suave {
+    background: transparent;
+    color: var(--color-fumo);
+    border-color: var(--surface-graphite-edge);
+}
+
+.boton.suave:hover {
+    color: var(--color-bianco-ferrari);
+    border-color: var(--color-bianco-ferrari);
+    background: transparent;
+}
+
+.boton.peligro {
+    background: transparent;
+    color: var(--color-fumo);
+    border-color: var(--surface-graphite-edge);
+}
+
+.boton.peligro:hover {
+    color: var(--color-rosso-corsa);
+    border-color: var(--color-rosso-corsa);
+    background: transparent;
+}
+
+.boton[disabled] {
+    color: var(--color-piombo);
+    border-color: var(--surface-graphite-edge);
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+.boton[disabled]::after {
+    transform: none;
+}
+
+/* ==========================================================================
+   Form Rows & Action Bars
+   ========================================================================== */
+.fila {
+    display: flex;
+    gap: var(--element-gap);
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+.fila > div {
+    flex: 1 1 160px;
+}
+
+.acciones {
+    margin-top: var(--spacing-24);
+    display: flex;
+    gap: var(--element-gap);
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+/* ==========================================================================
+   Data Tables
+   1px #303030 hairlines, uppercase 11px headers, #da291c active telemetry row
+   ========================================================================== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: var(--spacing-15) var(--spacing-10);
+    border-bottom: 1px solid var(--surface-graphite-edge);
+    font-size: var(--text-body-sm);
+    line-height: var(--leading-body-sm);
+    letter-spacing: 0.022em;
+    transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+th {
+    color: var(--color-fumo);
+    font-family: var(--font-body-font);
+    font-size: var(--text-caption);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--leading-caption);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caption);
+}
+
+tr.fila-miembro {
+    cursor: pointer;
+}
+
+tr.fila-miembro:hover td {
+    background: var(--surface-void-black);
+    color: var(--color-rosso-corsa);
+}
+
+tr.fila-miembro.seleccionada td {
+    background: var(--surface-void-black);
+    color: var(--color-rosso-corsa);
+    border-bottom-color: var(--color-rosso-corsa);
+}
+
+tr.fila-miembro.seleccionada code {
+    border-color: var(--color-rosso-corsa);
+    color: var(--color-rosso-corsa);
+}
+
+/* ==========================================================================
+   Code, Help & Examples
+   ========================================================================== */
+code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: var(--text-caption);
+    background: var(--surface-void-black);
+    color: var(--color-bianco-ferrari);
+    border: 1px solid var(--surface-graphite-edge);
+    padding: 2px 6px;
+    border-radius: 0px;
+    letter-spacing: 0.028em;
+}
+
+.ayuda {
+    color: var(--color-fumo);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caption);
+}
+
+pre.ejemplo {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: var(--text-body-sm);
+    line-height: var(--leading-body-sm);
+    letter-spacing: 0.022em;
+    background: var(--surface-void-black);
+    color: var(--color-bianco-ferrari);
+    border: 1px solid var(--surface-graphite-edge);
+    border-radius: 0px;
+    padding: var(--spacing-20);
+    overflow: auto;
+    margin: var(--spacing-15) 0;
+}
+
+/* ==========================================================================
+   Genealogical Tree Canvas (.lienzo) & Category Pills (.leyenda)
+   Full-bleed dark void container (#000000) & single 9999px pill exception
+   ========================================================================== */
+.lienzo {
+    overflow: auto;
+    background: var(--surface-void-black);
+    border: 1px solid var(--surface-graphite-edge);
+    border-radius: 0px;
+    padding: var(--spacing-24);
+    text-align: center;
+}
+
+.lienzo canvas {
+    display: inline-block;
+    background: var(--surface-void-black);
+    border-radius: 0px;
+    box-shadow: none;
+}
+
+.leyenda {
+    display: flex;
+    gap: var(--spacing-16);
+    flex-wrap: wrap;
+    font-family: var(--font-body-font);
+    font-size: var(--text-caption);
+    line-height: var(--leading-caption);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-caption);
+    color: var(--color-bianco-ferrari);
+    margin: var(--spacing-20) 0 0;
+}
+
+/* Category Pill (Full Radius 9999px): The single rounded element in the system */
+.leyenda span {
+    background: transparent;
+    border: 1px solid var(--color-bianco-ferrari);
+    border-radius: var(--radius-full);
+    padding: var(--spacing-4) var(--spacing-15);
+    font-size: var(--text-micro);
+    letter-spacing: var(--tracking-micro);
+    display: inline-flex;
+    align-items: center;
+    transition: border-color 0.25s ease, color 0.25s ease;
+}
+
+.leyenda span:hover {
+    border-color: var(--color-rosso-corsa);
+    color: var(--color-rosso-corsa);
+}
+
+.leyenda span::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 0px;
+    margin-right: var(--spacing-10);
+    border: 1px solid;
+}
+
+.leyenda .l-sujeto::before {
+    background: var(--color-bianco-ferrari);
+    border-color: var(--color-bianco-ferrari);
+}
+
+.leyenda .l-asc::before {
+    background: var(--color-fumo);
+    border-color: var(--color-bianco-ferrari);
+}
+
+.leyenda .l-desc::before {
+    background: var(--surface-graphite-edge);
+    border-color: var(--color-fumo);
+}
+
+/* ==========================================================================
+   Grid Panels & Home Showcase (.panel, .inicio)
+   ========================================================================== */
+.panel {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-32);
+}
+
+@media (min-width: 900px) {
+    .panel {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.oculto {
+    display: none !important;
+}
+
+.inicio {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-24);
+}
+
+.inicio a.tarjeta {
+    text-decoration: none;
+    color: var(--color-bianco-ferrari);
+    display: block;
+    background: var(--surface-night-surface);
+    border: 1px solid var(--surface-graphite-edge);
+    border-radius: 0px;
+    padding: var(--spacing-50) var(--spacing-32);
+    text-align: center;
+    position: relative;
+    transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.inicio a.tarjeta::after {
+    content: "EXPLORAR →";
+    display: block;
+    margin-top: var(--spacing-20);
+    font-family: var(--font-body-font);
+    font-size: var(--text-caption);
+    letter-spacing: var(--tracking-caption);
+    color: var(--color-bianco-ferrari);
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.inicio a.tarjeta:hover {
+    background: var(--surface-void-black);
+    border-color: var(--color-rosso-corsa);
+}
+
+.inicio a.tarjeta:hover h2,
+.inicio a.tarjeta:hover::after {
+    color: var(--color-rosso-corsa);
+}
+
+.inicio h2 {
+    margin-bottom: var(--spacing-10);
+    transition: color 0.25s ease;
+}
+
+/* Body Text Links — White with no underline, shifts to #da291c on hover */
+a:not(.boton):not(.enlace):not(.marca):not(.tarjeta) {
+    color: var(--color-bianco-ferrari);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-body-sm);
+    transition: color 0.25s ease;
+}
+
+a:not(.boton):not(.enlace):not(.marca):not(.tarjeta):hover {
+    color: var(--color-rosso-corsa);
+}
